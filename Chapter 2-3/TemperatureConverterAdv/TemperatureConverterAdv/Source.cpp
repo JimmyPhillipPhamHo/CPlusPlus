@@ -49,7 +49,7 @@ int main()
 		cin >> temp1;
 
 		z = convertToFahern(temp1);
-		cout << "Temperature in fahrenheit is = " << z << endl;
+		
 
 		system("pause");
 		return 0;
