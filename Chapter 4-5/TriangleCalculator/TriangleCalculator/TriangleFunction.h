@@ -1,9 +1,9 @@
 #ifndef TriangleFunction
 #define TriangleFunction
 
-void Options();
-void rightTriangle();
 int main();
+void rightTriangle();
+void Options();
 
 
 
