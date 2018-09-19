@@ -1,6 +1,5 @@
 #include <iostream>
-#include <string>
-#include <stdio.h>      
+#include <string>     
 #include <math.h> 
 #include "TriangleFunction.h"
 
@@ -21,26 +20,18 @@ double perimeterCalculate(double aSide, double bSide, double cSide)
 	return perResult;
 }
 
-double missingSideA(double bSide, double cSide)
+double missingSideAOrB(double aOrBSide, double cSide)
 {
 	double side_A_Result;
-	side_A_Result = (bSide * bSide) + (cSide * cSide);
+	side_A_Result = pow(aOrBSide, 2) + pow(cSide, 2);
 	side_A_Result = sqrt(side_A_Result);
 	return side_A_Result;
-}
-
-double missingSideB(double aSide, double cSide)
-{
-	double side_B_Result;
-	side_B_Result = (aSide * aSide) + (cSide * cSide);
-	side_B_Result = sqrt(side_B_Result);
-	return side_B_Result;
 }
 
 double missingSideC(double aSide, double bSide)
 {
 	double side_C_Result;
-	side_C_Result = (aSide * aSide) + (bSide * bSide);
+	side_C_Result = pow(aSide, 2) + (bSide, 2);
 	side_C_Result = sqrt(side_C_Result);
 	return side_C_Result;
 }
@@ -51,9 +42,11 @@ void rightTriangle()
 	int continueSolve;
 	int chooseSolve;
 	double solution;
+	double aOrBSide;
 	double aSide;
 	double bSide;
 	double cSide;
+
 	cout << "You have choice Right Trinagle" << endl;
 	cout << "What do you what to solve for" << endl;
 	cout << "Solve for Area = 1, Solve for Preimeter = 2, Solve for Missing Side = 3" << endl;
@@ -112,44 +105,41 @@ void rightTriangle()
 	}
 	else if (chooseSolve == 3)
 	{
-		cout << "You have choice Missing Side" << endl;
-		cout << "Enter what side you are missing for your triangle" << endl;
-		cout << "Type 1 for Side A or 2 for Side B or 3 for Side C" << endl;
-		cout << "Please enter your side here:";
-		cin >> chooseSolve;
+		do
+		{
+			cout << "You have choice Missing Side" << endl;
+			cout << "Enter what side you are missing for your triangle" << endl;
+			cout << "Type 1 for Side A or 2 for Side B or 3 for Side C" << endl;
+			cout << "Please enter your side here:";
+			cin >> chooseSolve;
 
-		if (chooseSolve == 1)
-		{
-			cout << "You have choice Side A" << endl;
-			cout << "Please enter side B here: ";
-			cin >> bSide;
-			cout << "Please enter side C here: ";
-			cin >> cSide;
-			solution = missingSideA(bSide, cSide);
-			cout << "Missing Side A for the right Triangle is: " << solution << endl;
-		}
-		else if (chooseSolve == 2)
-		{
-			cout << "You have choice Side B" << endl;
-			cout << "Please enter side A here: ";
-			cin >> aSide;
-			cout << "Please enter side C here: ";
-			cin >> cSide;
-			solution = missingSideA(aSide, cSide);
-			cout << "Missing Side B for the right Triangle is: " << solution << endl;
-		}
-		else if (chooseSolve == 3)
-		{
-			cout << "You have choice Side C" << endl;
-			cout << "Please enter side A here: ";
-			cin >> aSide;
-			cout << "Please enter side B here: ";
-			cin >> bSide;
-			solution = missingSideA(aSide, bSide);
-			cout << "Missing Side C for the right Triangle is: " << solution << endl;
-		}
-			
+			if (chooseSolve == 1 || chooseSolve == 2)
+			{
+				cout << "You have choice Side B or Side A" << endl;
+				cout << "Please enter side A or B here: ";
+				cin >> aOrBSide;
+				cout << "Please enter side C here: ";
+				cin >> cSide;
+				solution = missingSideAOrB(aOrBSide, cSide);
+				cout << "Missing Side A or A for the right Triangle is: " << solution << endl;
+			}
+			else if (chooseSolve == 3)
+			{
+				cout << "You have choice Side C" << endl;
+				cout << "Please enter side A here: ";
+				cin >> aSide;
+				cout << "Please enter side B here: ";
+				cin >> bSide;
+				solution = missingSideC(aSide, bSide);
+				cout << "Missing Side C for the right Triangle is: " << solution << endl;
+			}
 
+			cout << "Would you like to continue solving perimeter for right Triangle?" << endl;
+			cout << "Type 1 for yes or 2 for no" << endl;
+			cout << "Please enter your choice here: ";
+			cin >> continueSolve;
+
+		} while (continueSolve == 1);
+		
 	}
-
-}
+}// end of right triangle function

@@ -5,12 +5,12 @@
 using namespace std;
 
 int main()
-{ 
+{
 	//declare functions
 	int userAge;
 	string stringAnswer;
 	string college;
-	string phone;
+	int phone;
 
 	//enter input items
 	cout << "Please enter your name here: ";
@@ -40,7 +40,7 @@ int main()
 	}
 	else if (userAge > 30 && userAge <= 40)
 	{
-		stringAnswer = "How's your bording Job, must be fun.";
+		stringAnswer = "How's your boring Job, must be fun.";
 	}
 	else if (userAge > 40 && userAge <= 50)
 	{
@@ -52,13 +52,18 @@ int main()
 	}
 	else if (userAge > 60)
 	{
-		if (true)
+		cout << "Do you have a flip phone or a Smart Phone" << endl;
+		cout << "Enter 1 for flip phone or 2 for Smart Phone" << endl;
+		cout << "Please enter your answer here: ";
+		cin >> phone;
+
+		if (phone == 1)
 		{
 			stringAnswer = "You're need to be in a museum.";
 		}
-		else if (true)
+		else if (phone == 2)
 		{
-
+			stringAnswer = "You probably are using the very first iPhone, just to be cool with the kids";
 		}
 	}
 

@@ -4,6 +4,7 @@
 int main();
 void rightTriangle();
 void isoscelesTriangle();
+void equilateralTriangle();
 void Options();
 
 

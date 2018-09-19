@@ -6,33 +6,6 @@
 
 using namespace std;
 
-
-
-
-
-
-
-/*int areaCalculate()
-{
-
-}*/
-
-
-
-
-/*int isosceles()
-{
-
-}*/
-
-/*int equilateral()
-{
-
-}*/
-
-
-
-
 int main()
 {
 	int chooseTriangle;
@@ -46,7 +19,6 @@ int main()
 		if (chooseTriangle == 1)
 		{
 			rightTriangle();
-			
 		}
 		else if (chooseTriangle == 2)
 		{
@@ -54,14 +26,11 @@ int main()
 		}
 		else if (chooseTriangle == 3)
 		{
-			//equilateral();
-			cout << "Coming Soon" << endl;
-		}
-		else 
-		{
-			cout << "That is not an Option" << endl;
+			equilateralTriangle();
 		}
 	} while (chooseTriangle != 4);
+
+	cout << "That is not an Option" << endl;
 	
 	system("pause");
 	return 0;

@@ -1,26 +1,30 @@
 #include <iostream>
-#include <string>
-#include <stdio.h>      
+#include <string>     
 #include <math.h> 
 #include "TriangleFunction.h"
 
 using namespace std;
 
-double areaIsoscelesCal(double aSide, double baseSide)
+double areaIsoscelesCal1(double aSide, double bSide) //get the area using the user inputs of side A and the base of the isosceles
 {
 	double areaResult;
 	double height;
 	double basehalf;
-	basehalf = baseSide /2;
+	basehalf = bSide / 2; //divides the base by 2
 
-	height = (aSide * aSide) - (basehalf * basehalf) ;
+	height = (aSide * aSide) - (basehalf * basehalf);
 	height = sqrt(height);
-	
-	areaResult = 0.5 * baseSide * height;
-	return areaResult;
 
+	areaResult = 0.5 * bSide * height;
+	return areaResult;
 }
 
+double areaIsoscelesCal2(double bSide, double height) //get the are the user inputs of base and the height of the isosceles
+{
+	double areaResult;
+	areaResult = (height * bSide) / 2;
+	return areaResult;
+}
 
 double perimeterIsoscelesCal(double aSide, double bSide)
 {
@@ -29,44 +33,20 @@ double perimeterIsoscelesCal(double aSide, double bSide)
 	return perResult;
 }
 
-double MissingSideA(double bSide, double cSide)
-{
-	double side_A_Result;
-	side_A_Result = (bSide * bSide) + (cSide * cSide);
-	side_A_Result = sqrt(side_A_Result);
-	return side_A_Result;
-}
-
-double MissingSideB(double aSide, double cSide)
-{
-	double side_B_Result;
-	side_B_Result = (aSide * aSide) + (cSide * cSide);
-	side_B_Result = sqrt(side_B_Result);
-	return side_B_Result;
-}
-
-double MissingSideC(double aSide, double bSide)
-{
-	double side_C_Result;
-	side_C_Result = (aSide * aSide) + (bSide * bSide);
-	side_C_Result = sqrt(side_C_Result);
-	return side_C_Result;
-}
-
 void isoscelesTriangle()
 {
-	double test;
+
 	//declare variables
 	int continueSolve;
 	int chooseSolve;
 	double Solution;
-	double baseSide;
 	double aSide;
 	double bSide;
-	double cSide;
+	double height;
+
 	cout << "You have choice Isosceles Trinagle" << endl;
 	cout << "What do you what to solve for" << endl;
-	cout << "Solve for Area = 1, Solve for Preimeter = 2, Solve for Missing Side = 3" << endl;
+	cout << "Solve for Area = 1, Solve for Preimeter = 2" << endl;
 	cout << "Enter your choose here: ";
 	cin >> chooseSolve;
 
@@ -76,17 +56,35 @@ void isoscelesTriangle()
 		do
 		{
 			cout << "You have choice Area" << endl;
-			cout << "Type the number for side A and side B of the triangle to get the area." << endl;
-			cout << "Please enter side A here: ";
-			cin >> aSide;
-			cout << "Please enter side baseSide here: ";
-			cin >> baseSide;
+			cout << "Does your isosceles triangle have A and B side with no height then type 1" << endl;
+			cout << "Does your isosceles triangle have the base and height then type 2" << endl;
+			cout << "Please enter your choice here: ";
+			cin >> chooseSolve;
 
-			Solution = areaIsoscelesCal(aSide, baseSide);
-			cout << "The Area of Isosceles Triangle is: " << Solution << endl;
+			if (chooseSolve == 1)
+			{
+				cout << "Type the number for side A and side B of the triangle to get the area." << endl;
+				cout << "Please enter side A here: ";
+				cin >> aSide;
+				cout << "Please enter side base Side here: ";
+				cin >> bSide;
 
+				Solution = areaIsoscelesCal1(aSide, bSide);
+				cout << "The Area of Isosceles Triangle is: " << Solution << endl;
+
+			}
+			else if (chooseSolve == 2 )
+			{
+				cout << "Type the number for side A and side B of the triangle to get the area." << endl;
+				cout << "Please enter the base here: ";
+				cin >> bSide;
+				cout << "Please enter the height here: ";
+				cin >> height;
+
+				Solution = areaIsoscelesCal2(bSide, height);
+				cout << "The Area of Isosceles Triangle is: " << Solution << endl;
+			}
 			
-
 			cout << "Would you like to continue solving area for isosceles Triangle?" << endl;
 			cout << "Type 1 for yes or 2 for no" << endl;
 			cout << "Please enter your choice here: ";
@@ -120,46 +118,6 @@ void isoscelesTriangle()
 
 		Options();
 	}
-	else if (chooseSolve == 3)
-	{
-		cout << "You have choice Missing Side" << endl;
-		cout << "Enter what side you are missing for your triangle" << endl;
-		cout << "Type 1 for Side A or 2 for Side B or 3 for Side C" << endl;
-		cout << "Please enter your side here:";
-		cin >> chooseSolve;
-
-		if (chooseSolve == 1)
-		{
-			cout << "You have choice Side A" << endl;
-			cout << "Please enter side B here: ";
-			cin >> bSide;
-			cout << "Please enter side C here: ";
-			cin >> cSide;
-			Solution = MissingSideA(bSide, cSide);
-			cout << "Missing Side A for the right Triangle is: " << Solution << endl;
-		}
-		else if (chooseSolve == 2)
-		{
-			cout << "You have choice Side B" << endl;
-			cout << "Please enter side A here: ";
-			cin >> aSide;
-			cout << "Please enter side C here: ";
-			cin >> cSide;
-			Solution = MissingSideA(aSide, cSide);
-			cout << "Missing Side B for the right Triangle is: " << Solution << endl;
-		}
-		else if (chooseSolve == 3)
-		{
-			cout << "You have choice Side C" << endl;
-			cout << "Please enter side A here: ";
-			cin >> aSide;
-			cout << "Please enter side B here: ";
-			cin >> bSide;
-			Solution = MissingSideA(aSide, bSide);
-			cout << "Missing Side C for the right Triangle is: " << Solution << endl;
-		}
+}// end of isosceles function
 
 
-	}
-
-}
