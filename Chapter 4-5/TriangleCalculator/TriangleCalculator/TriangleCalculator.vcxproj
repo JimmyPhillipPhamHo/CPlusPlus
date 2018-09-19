@@ -115,6 +115,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EquilateralTriangle.cpp" />
+    <ClCompile Include="IsoscelesTrianlge.cpp" />
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="RightTriangle.cpp" />
     <ClCompile Include="Source.cpp" />
