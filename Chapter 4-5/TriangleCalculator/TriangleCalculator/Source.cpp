@@ -43,16 +43,16 @@ int main()
 	cin >> chooseTriangle;
 	do
 	{
-		if (chooseTriangle = 1)
+		if (chooseTriangle == 1)
 		{
 			rightTriangle();
+			
 		}
-		else if (chooseTriangle = 2)
+		else if (chooseTriangle == 2)
 		{
-			//isosceles();
-			cout << "Coming Soon" << endl;
+			isoscelesTriangle();
 		}
-		else if (chooseTriangle = 3)
+		else if (chooseTriangle == 3)
 		{
 			//equilateral();
 			cout << "Coming Soon" << endl;

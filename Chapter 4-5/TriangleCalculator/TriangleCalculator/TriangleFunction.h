@@ -3,6 +3,7 @@
 
 int main();
 void rightTriangle();
+void isoscelesTriangle();
 void Options();
 
 
