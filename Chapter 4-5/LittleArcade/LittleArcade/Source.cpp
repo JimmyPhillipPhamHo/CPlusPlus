@@ -24,11 +24,11 @@ int main()
 	cout << "---Door game = 1, Randow Number Game = 2---" << endl;
 	cout << "-------------------------------------------" << endl;
 
+	cout << "Enter the your choice Here: ";
+	cin >> pickGame;
 	do
 	{
-		cout << "Enter the your choice Here: ";
-		cin >> pickGame;
-
+		
 		if (pickGame == 1)
 		{
 			doorgame();
@@ -38,6 +38,12 @@ int main()
 		{
 			randomGame();
 		}
+
+		cout << "Would you like to play again or choose a different game" << endl;
+		cout << "Again your choices are Door game = 1, Randow Number Game = 2" << endl;
+		cout << "Enter the your choice Here: ";
+		cin >> pickGame;
+
 	} while (pickGame != 4);
 
 	system("pause");

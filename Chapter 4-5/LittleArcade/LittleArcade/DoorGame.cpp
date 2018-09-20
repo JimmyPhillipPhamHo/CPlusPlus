@@ -13,7 +13,8 @@ int doorgame()
 {
 	int userDoorChoice;
 
-	cout << "Pick one of the three doors\nDoor1\nDoor2\nDoor3";
+	cout << "Pick one of the three doors\nDoor 1\nDoor 2\nDoor 3" << endl;
+	cout << "Please enter the door you choice: ";
 	cin >> userDoorChoice;
 
 	if (userDoorChoice == 1)

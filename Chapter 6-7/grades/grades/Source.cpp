@@ -12,7 +12,7 @@ int main()
 	//enter grade to tell you what type of student you are 
 
 	cout << "Enter your letter grade so we can judge you ";
-	cout >> grade;
+	cin >> grade;
 
 	grade + toupper(grade);
 

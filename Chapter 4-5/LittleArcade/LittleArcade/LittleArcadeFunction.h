@@ -1,6 +1,7 @@
 #ifndef LittleArcadeFuctions
 #define LittleArcadeFuctions
 
-int door
+int doorgame();
+int randomGame();
 
 #endif // !LittleArcadeFuctions
