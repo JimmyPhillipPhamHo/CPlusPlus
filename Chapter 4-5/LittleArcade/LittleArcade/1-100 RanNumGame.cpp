@@ -9,7 +9,15 @@
 
 using namespace std;
 
-int 1 - 100 ()
+int OneHundredRanNumGame ()
 {
+	int numChoice;
+	int secret;
+	int count = 1;
+	srand(time(NULL));
+	secret = rand() % 100 + 1;
+	cout << "Pick a random 1 out 10" << endl;
+	cout << "Enter your number here: ";
+	cin >> numChoice;
 
 }

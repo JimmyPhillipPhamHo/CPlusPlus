@@ -20,13 +20,13 @@ int main()
 		{
 			cout << "Lift off" << endl;
 		}
-	}
+	}// end of the second loop
 
 	cout << "Third Loop" << endl;
 	for (int z = 0; z <= 99; z = z + 5)
 	{
 		cout << z << endl;
-	}
+	}// end of the third loop
 
 	cout << "forth Loop" << endl;
 	for (int b = 0; b <= 100; b = b + 3)
@@ -36,7 +36,7 @@ int main()
 		{
 			cout << "/50/" << endl;
 		}
-	}
+	}// end of the forth loop
 
 	system("pause");
 	return 0;
