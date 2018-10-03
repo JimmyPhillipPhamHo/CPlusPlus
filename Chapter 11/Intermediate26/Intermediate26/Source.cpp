@@ -12,6 +12,7 @@ int main()
 
 	//declare array
 	double prices[10] = { 10.5, 25.5, 9.75, 6.0, 35.0, 100.4, 10.65, .56, 14.75, 4.78 };
+	double newPrices[10] = { 0.0 };
 	//declare variable
 	double increase = 0.0;
 
@@ -23,8 +24,20 @@ int main()
 
 	//display contents of array
 
+	for (int i = 0; i < size(prices); i++)
+	{
+		newPrices[i] = prices[i] + (1 + (increase / 100));
+	}
+
+	cout << "New price: ";
+	
+	for (int i = 0; i < size(newPrices); i++)
+	{
+		cout << newPrices[i] << " ";
+	}
+
 	//end for
 
-	//system("pause");
+	system("pause");
 	return 0;
 }	//end of main function

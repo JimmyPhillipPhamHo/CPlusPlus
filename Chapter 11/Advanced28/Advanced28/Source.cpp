@@ -1,14 +1,24 @@
 //Advanced28.cpp - displays the number of students
 //earning a specific score
-//Created/revised by <your name> on <current date>
+//Created/revised by <Jimmy Pham Ho> on <10/3/2018>
 
 #include <iostream>
+#include <string>
+#include <time.h>  
+#include <stdio.h>
+#include <stdlib.h>
 using namespace std;
 
 int main()
 {
 	//declare array
+	int scores[20] = { 0 };
 
+	srand(time(NULL));
+
+	for (int i = 0; i < size(scores); i++)
+		scores[i] = rand() % 100 + 1;
+	//end for
 
 	//declare variables
 	int searchScore = 0;
@@ -16,6 +26,7 @@ int main()
 
 	cout << "Enter a score from 0 through 100 (-1 to end): ";
 	cin >> searchScore;
+
 	while (searchScore >= 0)
 	{
 		total = 0;
@@ -35,6 +46,6 @@ int main()
 		cin >> searchScore;
 	}  //end while
 
-	   //system("pause");
+	system("pause");
 	return 0;
 }	//end of main function

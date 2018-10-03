@@ -4,7 +4,7 @@
 //total annual rainfall amount, the average rainfall
 //amount, the highest rainfall amount, or the lowest
 //rainfall amount
-//Created/revised by <your name> on <current date>
+//Created/revised by <Jimmy Pham Ho> on <10/2/2018>
 
 #include <iostream>
 using namespace std;

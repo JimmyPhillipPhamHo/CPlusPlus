@@ -19,6 +19,8 @@ int randomGame()
 	cout << "Enter your number here: ";
 	cin >> numChoice;
 
+	cout << secret << endl;
+
 	if (numChoice == secret)
 	{
 		cout << "You chose the right number, You Win a life Supply\nFreeze Dried Smoky BBQ Roasted Crickets" << endl;

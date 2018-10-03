@@ -1,5 +1,5 @@
 //Intermediate23.cpp - displays the contents of two parallel arrays
-//Created/revised by <your name> on <current date>
+//Created/revised by <Jimmy Pham Ho> on <10/2/2018>
 
 #include <iostream>
 using namespace std;
