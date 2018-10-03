@@ -10,56 +10,56 @@ using namespace std;
 
 int main()
 {
+	//declare variables
 	string result;
 	double average;
 	double sum = 0.0;
-	double highScore = 100;
+	double highScore = 0.0;
 	double lowScore = 0.0;
 	double testScore = 0.0;
-	double resultLowScore = 0.0;
-	double resultHighScore = 0.0;
+	//declare array
 	double scoreArray[10] = { 0.0 };
 
-
+	//adds user inputs to the score array
 	for (int i = 0; i < size(scoreArray); i++)
 	{
-		cout << "Please enter scores here: ";
+		cout << "Enter a test score: ";
 		cin >> scoreArray[i];
 	}
 
+	//find the highest number in score array
+	for (int i = 0; i < size(scoreArray); ++i)
+	{
+		if (scoreArray[0] <= scoreArray[i])
+		{
+			highScore = scoreArray[i];
+		}
+	}
+	
+	//find the lowest number in score array
+	for (int i = 0; i < size(scoreArray); ++i)
+	{
+		if (scoreArray[0] >= scoreArray [i])
+		{
+			lowScore = scoreArray[i];
+		}
+
+	}
+
+	//sort the score array
 	int n = sizeof(scoreArray) / sizeof(scoreArray[10]);
 	sort(scoreArray, scoreArray + n);
 
-	
-	cout << "Enter a test score: ";
-	cin >> testScore;
-
-	for (int i = 0; i < size(scoreArray); i++)
+	//displays the sorted score array and get the sum of the array
+	for (int i = 0; i < n; ++i) 
 	{
-		if (scoreArray[i] <= lowScore)
-		{
-			scoreArray[i] = resultLowScore;
-		}
-		else if (scoreArray[i] >= highScore)
-		{
-			scoreArray[i] = resultHighScore;
-		}
-		
-	}
-
-
-	for (int i = 0; i < size(scoreArray); ++i)
-	{
+		cout << scoreArray[i] << " " << endl;
 		sum += scoreArray[i];
 	}
-
 	average = sum / 10;
 
-	for (int i = 0; i < n; ++i)
-		cout << scoreArray[i] << " " << endl;
-
-	cout << "Here is the lowest test score: " << resultLowScore << endl;
-	cout << "Here is the highest test score: " << resultHighScore << endl;
+	cout << "Here is the highest test score: " << highScore << endl;
+	cout << "Here is the lowest test score: " << lowScore << endl;
 	cout << "Here is the aveage test score: " << average << endl;
 
 
